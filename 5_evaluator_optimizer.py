@@ -38,6 +38,7 @@ def loop_workflow(user_query, evaluator_prompt, max_retries=5) -> str:
         user_query += f"{retries}차 요약 피드백:\n\n{evaluation_result}\n\n"
 
 def main():
+    ## 기사 링크 : https://zdnet.co.kr/view/?no=20250213091248
     input_article = """
 오픈AI가 몇 주 안에 새로운 모델인 'GPT-4.5'를 출시하며 분산돼 있던 생성형 인공지능(AI) 모델을 통합키로 했다. 추론용 모델인 'o' 시리즈를 정리하고 비(非)추론 모델인 'GPT' 시리즈로 합칠 예정이다.
 

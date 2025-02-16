@@ -15,7 +15,7 @@ async def run_llm_parallel(prompt_list):
 # 파이썬 f string에서는 {} 1개는 변수, JSON에서는 2개를 사용해야 함
 def get_orchestrator_prompt(user_query):
     return f"""
-다음 사용자 질문을 분석하고, 이를 4-5개의 관련된 하위 질문으로 분해하십시오:
+다음 사용자 질문을 분석하고, 이를 3개의 관련된 하위 질문으로 분해하십시오:
 
 다음 형식으로 응답을 제공하십시오:
 
@@ -101,7 +101,7 @@ async def orchestrate_task(user_query):
     print("\n============================aggregator prompt==========================\n")
     print(aggregator_prompt)
     
-    final_response = await llm_call_async(aggregator_prompt, model="gpt-4o")
+    final_response = llm_call(aggregator_prompt, model="gpt-4o")
     
     return final_response
 
