@@ -34,10 +34,10 @@ def prompt_chain_workflow_2(initial_input: str, prompt_chain: List[str]) -> List
     return response_chain
 
 
-initial_input = (
-    "나는 여름 휴가를 계획 중이야. 따뜻한 날씨를 좋아하고, 자연 경관과 역사적인 장소를 둘러보는 걸 좋아해. "
-    "어떤 여행지가 나에게 적합할까?"
-)
+initial_input ="""
+나는 여름 휴가를 계획 중이야. 따뜻한 날씨를 좋아하고, 자연 경관과 역사적인 장소를 둘러보는 걸 좋아해.
+어떤 여행지가 나에게 적합할까?
+"""
 
 # 프롬프트 체인: LLM이 단계적으로 여행을 계획하도록 유도
 prompt_chain = [
@@ -60,7 +60,7 @@ prompt_chain = [
 """,
 ]
 
-responses = prompt_chain_workflow(prompt_chain,initial_input)
+responses = prompt_chain_workflow_2(initial_input,prompt_chain)
 
 final_answer = responses[-1]
 print(final_answer)
