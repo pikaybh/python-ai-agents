@@ -27,7 +27,7 @@ def prompt_chain_workflow_2(initial_input: str, prompt_chain: List[str]) -> List
         final_prompt = f"{prompt}\n\n🔹 문맥(Context):\n{response}\n🔹 사용자 입력: {initial_input}"
         print(f"🔹 프롬프트:\n{final_prompt}\n")
 
-        response = llm_call(final_prompt)
+        response = llm_call(final_prompt, model="exaone3.5:latest")
         response_chain.append(response)
         print(f"✅ 응답:\n{response}\n")
 
